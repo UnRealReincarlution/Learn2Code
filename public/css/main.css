@@ -19,18 +19,31 @@ body {
     --main-background: #f4f4f4;
     /* --alt-background: #F7F7F7; */
     --alt2-background: #f9f9f9;
+    --alt3-background: #edf2f8; /* Blue Light Light */
+    --alt3-background-light: #f8fafb;
 
     --default-text: #031120;
     --alt-background: #031120;
 
-    --javascript-main: #dfc160;
-    --javascript-sec: #f3eec5;
+    --javascript-main: rgb(223, 193, 96);
+    --javascript-sec: rgb(243, 238, 197);
 
-    --cpp-main: #60b0df;
+    --javascript: 223, 193, 96;
+
+    --cpp-main: rgb(96, 176, 223);
     --cpp-sec: #c5ecf3;
 
-    --python-main: #6088df;
+    --cpp: 96, 176, 223;
+
+    --python-main: rgb(96, 136, 223);
     --python-sec: #c5d9f3;
+
+    --python: 96, 136, 223;
+
+    --html-main: rgb(197, 80, 80);
+    --html-sec: rgb(250, 192, 192);
+
+    --html: 197, 80, 80;
 
     --default-main: #838383;
     --default-sec: #f4f4f4;
@@ -68,3 +81,41 @@ a {
 .button:hover {
     cursor: pointer;
 }
+
+.javascript.full {
+    color: var(--javascript-main);
+    background-color: rgba(var(--javascript), 0.1);
+}
+
+.javascript.full:hover {
+    background-color: rgba(var(--javascript), 0.3);
+}
+
+.cpp.full {
+    color: var(--cpp-main);
+    background-color: rgba(var(--cpp), 0.1);
+}
+
+.html.full {
+    color: var(--html-main);
+    background-color: rgba(var(--html), 0.1);
+}
+
+.html.full:hover {
+    color: var(--html-main);
+    background-color: rgba(var(--html), 0.3);
+}
+
+.cpp.full:hover {
+    background-color: rgba(var(--cpp), 0.3);
+}
+
+.python.full {
+    color: var(--python-main);
+    background-color: rgba(var(--python), 0.1);
+}
+
+.python.full:hover {
+    background-color: rgba(var(--python), 0.3);
+}
+

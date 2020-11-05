@@ -7,6 +7,87 @@
     gap: 15px;
 }
 
+#overlay {
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 100;
+
+    background-color: rgba(0,0,0,0.2);
+}
+
+#overlay > div {
+    background-color: var(--alt2-background);
+    padding: 25px;
+    border-radius: 5px;
+
+    min-width: fit-content;
+    min-height: fit-content;
+
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    overflow: auto;
+}
+
+#overlay > div > h1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#overlay > div > h4 {
+    margin: 5px;
+}
+
+#overlay > div > div {
+    background-color: var(--alt2-background);
+    padding: 10px;
+
+    min-width: fit-content;
+    min-height: fit-content;
+
+    max-height: 350px;
+
+    overflow: auto;
+}
+
+#overlay > div > div > h3 {
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#overlay > div > div > h3:hover {
+    cursor: pointer;
+}
+
+#overlay .button {
+    padding: 15px;
+}
+
+#overlay .button.right {
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+#overlay .button.left {
+    justify-self: flex-start;
+    align-self: flex-start;
+}
+
 .courses {
     display: flex;
     flex-direction: row;
@@ -26,7 +107,6 @@
     min-width: 300px;
     min-height: 150px;
 
-    background-color: var(--alt2-background);
     width: fit-content;
 
     border: 1px solid var(--default-main);
@@ -40,9 +120,9 @@
 
 .course.large {
     max-width: 100%;
-    min-height: 30vh;
+    min-height: fit-content;
 
-    height: fit-content;
+    height: 100%;
 
     width: 100%;
 }
@@ -67,7 +147,7 @@
 
 .course.add h2 { 
     font-weight: 100;
-    font-size: 2em;
+    font-size: 3em;
     margin: 0;
 }
 
@@ -179,7 +259,7 @@
 }
 
 #account {
-    background-color: var(--cpp-sec);
+    background-color: var(--alt3-background);
     margin: 0;
 
     min-height: 250px;
@@ -200,7 +280,17 @@
 
     border-radius: 5px;
 
-    width: fit-content;
+    min-width: fit-content;
+    width: 75%;
+
+    font-weight: 100;
+    color: var(--default-sec);
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+
+    flex-direction: column;
 }
 
 .course.javascript .course_sel {
@@ -214,16 +304,6 @@
 
 .course.python .course_sel {
     background-color: var(--python-sec) !important;
-}
-
-.course_sel {
-    font-weight: 100;
-    color: var(--default-sec);
-
-    display: flex;
-    justify-content: space-evenly;
-    gap: 5px;
-    flex-direction: column;
 }
 
 .course_sel > div.active {
@@ -282,4 +362,12 @@
 
 .python_badge {
     background-image: url("../../art/bronze_badge.png");
+}
+
+#continue {
+    background-color: var(--alt3-background-light);
+    padding: 25px;
+    border-radius: 15px;
+
+    box-sizing: border-box;
 }
