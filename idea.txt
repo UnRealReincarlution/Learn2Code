@@ -1,0 +1,19 @@
+# This is the planning document
+
+#  This website is intended to help younger children or teenagers to code. It provides introductory cources into C++, Javascript and Python (others less indepth)
+#  Aswell as extension material for those who feel up to it. This can be assigned teacher-side as homework by joining a class or can we self
+#  achieved as a self-learning material. Javascript, Python and C++ Cources will be the most in-depth and constantly developed even allowing for access
+#  and leaning of special technologies such as React Framework, JQuery etc... for JS, Flask and Django for Python and SFML for C++.
+
+
+Page 1: (Homepage)
+    The Homepage is designed to show your 'Dashboard' of sorts. In a sense, It will show you your progress and allow you to resume tasks and activities. 
+    The homepage also allows you to manage your account and view progress of others such as (TBD) leaderboards.
+
+Page 2: "Template Style" (Code Interface)
+    This page has two main sections, a left hand side in which you can code and write programs, the right hand side outlining your activity (what you are coding) 
+    aswell as providing hints etc...
+
+Page 3: (Login / Logout)
+    APS.
+    

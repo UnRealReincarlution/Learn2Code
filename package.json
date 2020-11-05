@@ -1,0 +1,20 @@
+{
+  "name": "learntocode",
+  "version": "0.0.1",
+  "description": "A website where you can learn how to code",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Learning",
+    "Education"
+  ],
+  "author": "Ben White and Eden Zhang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-server": "^0.12.3"
+  }
+}

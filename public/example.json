@@ -1,0 +1,24 @@
+{
+    "course": "Intro to Javascript",
+    "course_id": 19103821238263,
+    "public": false,
+    "lessons": [
+        {
+            "type": "lesson",
+            "ide": true,
+            "title": "Javascript",
+            "body": "Javacript is a beautiful language that...",
+            "dificulty": 0,
+            "order": 0
+        },
+        {
+            "type": "lesson",
+            "ide": true,
+            "title": "Variables",
+            "body": "In Javascript, we store values as variables...",
+            "dificulty": 0,
+            "order": 1
+        }
+    ],
+    "lesson_count": 2
+}

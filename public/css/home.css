@@ -1,0 +1,285 @@
+#display {
+    padding: 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.courses {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    gap: 15px;
+
+    box-sizing: border-box;
+}
+
+.course {
+    box-sizing: border-box;
+
+    padding: 25px;
+    border-radius: 7px;
+
+    min-width: 300px;
+    min-height: 150px;
+
+    background-color: var(--alt2-background);
+    width: fit-content;
+
+    border: 1px solid var(--default-main);
+
+    transition: .2s ease transform, background;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course.large {
+    max-width: 100%;
+    min-height: 30vh;
+
+    height: fit-content;
+
+    width: 100%;
+}
+
+.course.large h1 {
+    font-size: 2em;
+
+    font-weight: 200;
+}
+
+.course.large h1 strong {
+    font-weight: 400;
+}
+
+.course.large.account {
+    background-color: transparent;
+}
+
+.course.add {
+    text-align: center;
+}
+
+.course.add h2 { 
+    font-weight: 100;
+    font-size: 2em;
+    margin: 0;
+}
+
+.course.javascript {
+    border: 1px solid var(--javascript-main);
+}
+
+.course.cpp {
+    border: 1px solid var(--cpp-main);
+}
+
+.course.python {
+    border: 1px solid var(--python-main);
+}
+
+.course:hover:not(.large) {
+    transform: translateY(-5px);
+    cursor: pointer;   
+
+    background-color: var(--default-sec);
+}
+
+.course.javascript:hover:not(.large) {
+    background-color: var(--javascript-sec);
+}
+
+.course.cpp:hover:not(.large) {
+    background-color: var(--cpp-sec);
+}
+
+.course.python:hover:not(.large) {
+    background-color: var(--python-sec);
+}
+
+.course  h3{
+    margin: 5px;
+}
+
+.lang {
+    padding: 5px;
+    border-radius: 3px;
+
+    background-color: var(--default-sec);
+    color: var(--default-main); 
+
+    width: fit-content;
+    font-weight: bold;
+}
+
+.course.javascript .lang {
+    background-color: var(--javascript-sec);
+    color: var(--javascript-main); 
+}
+
+.course.cpp .lang {
+    background-color: var(--cpp-sec);
+    color: var(--cpp-main); 
+}
+
+.course.python .lang {
+    background-color: var(--python-sec);
+    color: var(--python-main); 
+}
+
+.package {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.package h4 {
+    font-weight: 100;
+}
+
+.package_together {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.package_together h3 {
+    font-weight: 300;
+    font-size: 1em;
+}
+ 
+.package_together h4 {
+    font-weight: 100;
+}
+
+.package_together h5 {
+    margin: 0;
+}
+
+.progress {
+    font-weight: thin;
+}
+
+.progress.lang {
+    background-color: var(--alt-background) !important;
+    color: var(--alt2-background) !important;
+
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.large.package .progress:hover {
+    cursor: pointer;
+}
+
+#account {
+    background-color: var(--cpp-sec);
+    margin: 0;
+
+    min-height: 250px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#account * {
+    margin: 0;
+}
+
+.course_sel {
+    background-color: var(--alt-background);
+    padding: 15px;
+    margin: 15px;
+
+    border-radius: 5px;
+
+    width: fit-content;
+}
+
+.course.javascript .course_sel {
+    background-color: var(--javascript-sec) !important;
+    color: var(--deafult-text) !important;
+}
+
+.course.cpp .course_sel {
+    background-color: var(--cpp-sec) !important;
+}
+
+.course.python .course_sel {
+    background-color: var(--python-sec) !important;
+}
+
+.course_sel {
+    font-weight: 100;
+    color: var(--default-sec);
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.course_sel > div.active {
+    font-weight: 400;
+}
+
+.course_sel > div {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#continue {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+    gap: 55px;
+
+    height: fit-content;
+}
+
+#continue > div {
+    width: 100%;
+}
+
+.badges {
+    display: flex;
+    flex-direction: row;
+
+    gap: 15px;
+
+    display: none;
+}
+
+.badge {
+    height: 150px;
+    width: 150px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.badge img {
+    height: 125px;
+    width: 125px;
+}
+
+.cpp_badge {
+    background-image: url("../../art/bronze_badge.png");
+}
+
+.python_badge {
+    background-image: url("../../art/bronze_badge.png");
+}
