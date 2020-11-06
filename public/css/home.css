@@ -9,6 +9,10 @@
 
 body {
     background-color: var(--main-background);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #overlay {
@@ -28,7 +32,7 @@ body {
 
     z-index: 100;
 
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.5);
 }
 
 #overlay > div {
@@ -169,6 +173,11 @@ body {
     background-color: rgba(var(--python), 0.1);
 }
 
+.course.html {
+    border: 1px solid transparent;
+    background-color: rgba(var(--html), 0.1);
+}
+
 .course:hover:not(.large) {
     transform: translateY(-5px);
     cursor: pointer;   
@@ -192,12 +201,17 @@ body {
     background-color: rgba(var(--python), 0.2);
 }
 
+.course.html:hover:not(.large) {
+    border-color: rgba(var(--html), 0.4);
+    background-color: rgba(var(--html), 0.2);
+}
+
 .course  h3{
     margin: 5px;
 }
 
 .lang {
-    padding: 5px;
+    padding: 7px;
     border-radius: 3px;
 
     background-color: var(--default-sec);
@@ -208,18 +222,23 @@ body {
 }
 
 .course.javascript .lang {
-    background-color: var(--javascript-sec);
+    background-color: rgba(var(--javascript), 0.2);
     color: var(--javascript-main); 
 }
 
 .course.cpp .lang {
-    background-color: var(--cpp-sec);
+    background-color: rgba(var(--cpp), 0.2);
     color: var(--cpp-main); 
 }
 
 .course.python .lang {
-    background-color: var(--python-sec);
+    background-color: rgba(var(--python), 0.2);
     color: var(--python-main); 
+}
+
+.course.html .lang {
+    background-color: rgba(var(--html), 0.2);
+    color: var(--html-main); 
 }
 
 .package {
@@ -401,4 +420,70 @@ body {
     border-radius: 15px;
 
     box-sizing: border-box;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    width: 250px;
+
+    gap: 15px;
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form_body {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+}
+
+.toggle {
+    display: flex;
+    flex-direction: row;
+    border-radius: 3px;
+    border: 1px solid rgba(var(--default-rgb), 0.2);
+}
+
+.toggle h3 {
+    padding: 10px;
+    margin: 0px;
+    border-radius: 3px;
+}
+
+.toggle h3.active {
+    background-color: var(--alt-background);
+    color: var(--main-background);
+}
+
+.row {
+    display: flex;
+    flex-direction: row !important;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: column !important;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form_toggle:hover {
+    cursor: pointer;
 }
