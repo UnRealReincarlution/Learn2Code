@@ -15,8 +15,8 @@ body {
 }
 
 :root {
-    /* CSS Colour Theme */
-    --main-background: #f4f4f4;
+    /* CSS Light Colour Theme */
+    --main-background: #ffffff;
     /* --alt-background: #F7F7F7; */
     --alt2-background: #f9f9f9;
     --alt3-background: #edf2f8; /* Blue Light Light */
@@ -24,6 +24,8 @@ body {
 
     --default-text: #031120;
     --alt-background: #031120;
+
+    --default-rgb: 3, 17, 32;
 
     --javascript-main: rgb(223, 193, 96);
     --javascript-sec: rgb(243, 238, 197);
@@ -45,8 +47,50 @@ body {
 
     --html: 197, 80, 80;
 
-    --default-main: #838383;
+    --default-main: rgb(131, 131, 131);
     --default-sec: #f4f4f4;
+
+    --default: 131, 131, 131;
+}
+
+:root[theme='dark'] {
+    /* CSS Dark Colour Theme */
+
+    --main-background: #031120;
+    /* --alt-background: #F7F7F7; */
+    --alt2-background: #031120;
+    --alt3-background: #061930; /* Blue Light Light */
+    --alt3-background-light: #041427;
+
+    --default-text: #f9f9f9;
+    --alt-background: #f9f9f9;
+
+    --default-rgb: 249, 249, 249;
+
+    --javascript-main: rgb(223, 193, 96);
+    --javascript-sec: rgb(243, 238, 197);
+
+    --javascript: 223, 193, 96;
+
+    --cpp-main: rgb(96, 176, 223);
+    --cpp-sec: #c5ecf3;
+
+    --cpp: 96, 176, 223;
+
+    --python-main: rgb(96, 136, 223);
+    --python-sec: #c5d9f3;
+
+    --python: 96, 136, 223;
+
+    --html-main: rgb(197, 80, 80);
+    --html-sec: rgb(250, 192, 192);
+
+    --html: 197, 80, 80;
+
+    --default-main: rgb(131, 131, 131);
+    --default-sec: #f4f4f4;
+
+    --default: 131, 131, 131;
 }
 
 header {
@@ -119,3 +163,35 @@ a {
     background-color: rgba(var(--python), 0.3);
 }
 
+footer {
+    max-height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 13px;
+
+    padding-left: 35px;
+    padding-right: 35px;
+
+    border-top: 1px solid rgba(var(--default-rgb), 0.2);
+}
+
+footer h5 {
+    margin: 5px;
+}
+
+footer div {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    gap: 10px;
+}
+
+footer img {
+    height: 25px;
+}

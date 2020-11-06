@@ -7,6 +7,10 @@
     gap: 15px;
 }
 
+body {
+    background-color: var(--main-background);
+}
+
 #overlay {
     display: none;
 
@@ -109,7 +113,8 @@
 
     width: fit-content;
 
-    border: 1px solid var(--default-main);
+    border: 1px solid transparent;
+    background-color: rgba(var(--default), 0.1);
 
     transition: .2s ease transform, background;
 
@@ -122,8 +127,10 @@
     max-width: 100%;
     min-height: fit-content;
 
-    height: 100%;
+    /* border: 1px solid transparent; 
+    background-color: transparent; */
 
+    height: 100%;
     width: 100%;
 }
 
@@ -137,10 +144,6 @@
     font-weight: 400;
 }
 
-.course.large.account {
-    background-color: transparent;
-}
-
 .course.add {
     text-align: center;
 }
@@ -152,34 +155,41 @@
 }
 
 .course.javascript {
-    border: 1px solid var(--javascript-main);
+    border: 1px solid transparent;
+    background-color: rgba(var(--javascript), 0.1);
 }
 
 .course.cpp {
-    border: 1px solid var(--cpp-main);
+    border: 1px solid transparent;
+    background-color: rgba(var(--cpp), 0.1);
 }
 
 .course.python {
-    border: 1px solid var(--python-main);
+    border: 1px solid transparent;
+    background-color: rgba(var(--python), 0.1);
 }
 
 .course:hover:not(.large) {
     transform: translateY(-5px);
     cursor: pointer;   
 
-    background-color: var(--default-sec);
+    border-color: rgba(var(--default), 0.4);
+    background-color: rgba(var(--default), 0.2);
 }
 
 .course.javascript:hover:not(.large) {
-    background-color: var(--javascript-sec);
+    border-color: rgba(var(--javascript), 0.4);
+    background-color: rgba(var(--javascript), 0.2);
 }
 
 .course.cpp:hover:not(.large) {
-    background-color: var(--cpp-sec);
+    border-color: rgba(var(--cpp), 0.4);
+    background-color: rgba(var(--cpp), 0.2);
 }
 
 .course.python:hover:not(.large) {
-    background-color: var(--python-sec);
+    border-color: rgba(var(--python), 0.4);
+    background-color: rgba(var(--python), 0.2);
 }
 
 .course  h3{
@@ -294,16 +304,35 @@
 }
 
 .course.javascript .course_sel {
-    background-color: var(--javascript-sec) !important;
-    color: var(--deafult-text) !important;
+    background-color: rgba(var(--javascript), 0.3) !important;
+}
+
+.course.javascript .course_sel > div {
+    color: var(--default-text) !important;
 }
 
 .course.cpp .course_sel {
     background-color: var(--cpp-sec) !important;
 }
 
+.course.cpp .course_sel > div {
+    color: var(--default-text) !important;
+}
+
 .course.python .course_sel {
     background-color: var(--python-sec) !important;
+}
+
+.course.cpp .course_sel > div {
+    color: var(--default-text) !important;
+}
+
+.course.html .course_sel {
+    background-color: var(--html-sec) !important;
+}
+
+.course.html .course_sel > div {
+    color: var(--default-text) !important;
 }
 
 .course_sel > div.active {
@@ -313,6 +342,8 @@
 .course_sel > div {
     border-radius: 5px;
     padding: 5px;
+
+    color: var(--main-background);
 }
 
 #continue {
