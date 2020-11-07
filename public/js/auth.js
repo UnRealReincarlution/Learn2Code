@@ -1,43 +1,19 @@
-let doc;
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user && !profile_updating) {
+        doc.user = user;
+        doc.loggedIn = true;
+        console.log(`${user.displayName} is logged in.`);
 
-// IIFE
-(() => {
-    console.log("Loaded Content");
-    doc = new Document(document, {});
+        window.location = './index.html'
 
-    var firebaseConfig = {
-        apiKey: "AIzaSyB7alTf1WYDY8vBC5kJ8U1tmSi7dg6gxD8",
-        authDomain: "learn-to-code-nz.firebaseapp.com",
-        databaseURL: "https://learn-to-code-nz.firebaseio.com",
-        projectId: "learn-to-code-nz",
-        storageBucket: "learn-to-code-nz.appspot.com",
-        messagingSenderId: "299048324789",
-        appId: "1:299048324789:web:ca0ceca1c5d9cf8598b8fc",
-        measurementId: "G-04BXSRYWNC"
-    };
-    
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+        $("#user_info").html(`<h4 id='user_name'>${user.displayName}</h4>`);
+        $("#username_display").html(`Good ${(new Date().getHours() > 19) ? 'Evening' : (new Date().getHours() > 12) ? 'Afternoon' : 'Morning'}, ${user.displayName}`)
+    }else {
+        console.log(`No Users are logged in.`);
 
-    firebase.auth().onAuthStateChanged(function(user) {
-        if (user) {
-            window.location = "./index.html";
-            
-            doc.user = user;
-            doc.loggedIn = true;
-            console.log(`${user.displayName} is logged in.`);
-
-            $("#user_info").html(`<h4 id='user_name'>${user.displayName}</h4>`);
-        }else {
-            console.log(`No Users are logged in.`);
-
-            $("#user_info").html("<a href='./auth.html' class='button'>Sign In</a>");
-        }
-    });
-})();
-
-const auth = firebase.auth();
-const db = firebase.firestore();
+        $("#user_info").html("<a href='./auth.html' class='button'>Sign In</a>");
+    }
+});
 
 $("#add_course").on('click', (e) => {
     $("#overlay").css('display', 'flex');

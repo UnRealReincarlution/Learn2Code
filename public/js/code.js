@@ -17,6 +17,11 @@ require(["vs/editor/editor.main"], function () {
 			'}'
 		].join('\n'),
 		language: 'cpp',
-		theme: 'vs-dark'
+		theme: 'vs-dark',
+		automaticLayout: true
 	});
+});
+
+$('#container').resize(function(){
+	monaco.editor.layout();
 });

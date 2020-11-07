@@ -1,5 +1,6 @@
 body {
     overflow: hidden;
+    background-color: var(--alt3-background);
 }
 
 #display {
@@ -74,15 +75,19 @@ body {
 }
 
 #display.cpp .code_header {
-    background-color: var(--cpp-sec);
+    background-color: rgba(var(--cpp),0.2);
 }
 
 #display.python .code_header {
-    background-color: var(--python-sec);
+    background-color: rgba(var(--python),0.2);
 }
 
 #display.javascript .code_header {
-    background-color: var(--javascript-sec);
+    background-color: rgba(var(--javascript),0.2);
+}
+
+#display.html .code_header {
+    background-color: rgba(var(--html),0.2);
 }
 
 #learner p {
@@ -93,7 +98,7 @@ body {
 .special {
     padding: 3px;
     border-radius: 3px;
-    background-color: var(--default-sec);
+    background-color: rgba(var(--default),0.2);
 
     width: fit-content;
 
@@ -101,35 +106,43 @@ body {
 }
 
 #display.cpp .special {
-    background-color: var(--cpp-sec);
+    background-color: rgba(var(--cpp),0.2);
 }
 
 #display.python .special {
-    background-color: var(--python-sec);
+    background-color: rgba(var(--python),0.2);
 }
 
 #display.javascript .special {
-    background-color: var(--javascript-sec);
+    background-color: rgba(var(--javascript),0.2);
+}
+
+#display.html .special {
+    background-color: rgba(var(--html),0.2);
 }
 
 .hint {
     padding: 10px;
     border-radius: 3px;
-    background-color: var(--default-sec);
+    background-color: rgba(var(--default),0.2);
 
     font-style: normal;
 }
 
 #display.cpp .hint {
-    background-color: var(--cpp-sec);
+    background-color: rgba(var(--cpp),0.2);
 }
 
 #display.python .hint {
-    background-color: var(--python-sec);
+    background-color: rgba(var(--python),0.2);
 }
 
 #display.javascript .hint {
-    background-color: var(--javascript-sec);
+    background-color: rgba(var(--javascript),0.2);
+}
+
+#display.html .hint {
+    background-color: rgba(var(--html),0.2);
 }
 
 .task_header {
@@ -139,21 +152,25 @@ body {
 .code {
     padding: 10px;
     border-radius: 3px;
-    background-color: var(--default-sec);
+    background-color: rgba(var(--default),0.2);
 
     font-style: normal;
 }
 
 #display.cpp .code {
-    background-color: var(--cpp-sec);
+    background-color: rgba(var(--cpp),0.2);
 }
 
 #display.python .code {
-    background-color: var(--python-sec);
+    background-color: rgba(var(--python),0.2);
 }
 
 #display.javascript .code {
-    background-color: var(--javascript-sec);
+    background-color: rgba(var(--javascript),0.2);
+}
+
+#display.html .code {
+    background-color: rgba(var(--html),0.2);
 }
 
 .code i {

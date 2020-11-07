@@ -4,6 +4,7 @@ class Document {
         this.theme = (localStorage.getItem('theme') != undefined) ? localStorage.getItem('theme') : 'light';
         this.user = user;
         this.loggedIn = false;
+        this.user_info = {};
 
         this.setTheme(this.theme);
     }
@@ -23,6 +24,8 @@ class Document {
         let password = $("#s_password").val();
         let username = $("#s_name").val();
 
+        profile_updating = true;
+
         console.log(email, password, username);
 
         firebase.auth().createUserWithEmailAndPassword(email, password).then((cred) => {
@@ -34,11 +37,23 @@ class Document {
             }).catch(function(error) {
                 console.log(error);
             }).then(() => {
-                // Redirect to homepage after sign up is completed
-                window.location = "./index.html";
+                db.collection("users").doc(cred.user.uid).set({
+                    name: username,
+                    account_type: "student",
+                    teacher: {
+                        id: 'null',
+                        name: 'null'
+                    },
+                    info: {
+                        lesson_date: 'null',
+                        due_work: []
+                    }
+                }).then(() => {
+                    profile_updating = false;
+                    // Redirect to homepage after sign up is completed
+                    window.location = "./index.html";
+                });
             });
-
-            
         }).catch(function(error) {
             console.log(error);
         });
@@ -54,4 +69,34 @@ class Document {
             console.log(error);
         });
     }
+
+    signOut() {
+        firebase.auth().signOut()
+    }
 }
+
+let doc;
+
+(() => {
+    console.log("Loaded Content");
+    doc = new Document(document, {});
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyB7alTf1WYDY8vBC5kJ8U1tmSi7dg6gxD8",
+        authDomain: "learn-to-code-nz.firebaseapp.com",
+        databaseURL: "https://learn-to-code-nz.firebaseio.com",
+        projectId: "learn-to-code-nz",
+        storageBucket: "learn-to-code-nz.appspot.com",
+        messagingSenderId: "299048324789",
+        appId: "1:299048324789:web:ca0ceca1c5d9cf8598b8fc",
+        measurementId: "G-04BXSRYWNC"
+    };
+    
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+})();
+
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+let profile_updating = false;
