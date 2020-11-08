@@ -23,13 +23,17 @@ class Document {
         let email = $("#s_email").val();
         let password = $("#s_password").val();
         let username = $("#s_name").val();
+        let teacher_code = $("#teacher_code_val").val();
 
+        let account_type = login_type;
         profile_updating = true;
 
         console.log(email, password, username);
 
         firebase.auth().createUserWithEmailAndPassword(email, password).then((cred) => {
             console.log(cred);
+
+            localStorage.setItem('firstAuth', 'true');
             
             // Set Username
             return cred.user.updateProfile({
@@ -37,22 +41,36 @@ class Document {
             }).catch(function(error) {
                 console.log(error);
             }).then(() => {
-                db.collection("users").doc(cred.user.uid).set({
-                    name: username,
-                    account_type: "student",
-                    teacher: {
-                        id: 'null',
-                        name: 'null'
-                    },
-                    info: {
-                        lesson_date: 'null',
-                        due_work: []
-                    }
-                }).then(() => {
-                    profile_updating = false;
-                    // Redirect to homepage after sign up is completed
-                    window.location = "./index.html";
-                });
+                if(account_type == 'teacher' && (parseInt(teacher_code, 24) % 27) == 0){
+                    db.collection("users").doc(cred.user.uid).set({
+                        name: username,
+                        account_type: 'teacher',
+                        students: []
+                    }).then(() => {
+                        profile_updating = false;
+                        // Redirect to homepage after sign up is completed
+                        window.location = "./index.html";
+                    });
+                }else {
+                    db.collection("users").doc(cred.user.uid).set({
+                        name: username,
+                        account_type: 'student',
+                        teacher: {
+                            id: 'null',
+                            name: 'null'
+                        },
+                        info: {
+                            lesson_date: 'null',
+                            due_work: []
+                        },
+                        courses: []
+                    }).then(() => {
+                        profile_updating = false;
+                        // Redirect to homepage after sign up is completed
+                        window.location = "./index.html";
+                    });
+                }
+                
             });
         }).catch(function(error) {
             console.log(error);

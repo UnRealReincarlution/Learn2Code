@@ -136,6 +136,8 @@ body {
 
     height: 100%;
     width: 100%;
+
+    padding: 35px;
 }
 
 .course.large h1 {
@@ -312,10 +314,6 @@ body {
     align-items: center;
 }
 
-#account * {
-    margin: 0;
-}
-
 .course_sel {
     background-color: var(--alt-background);
     padding: 15px;
@@ -475,11 +473,17 @@ body {
     padding: 10px;
     margin: 0px;
     border-radius: 3px;
+
+    user-select: none;
 }
 
 .toggle h3.active {
     background-color: var(--alt-background);
     color: var(--main-background);
+}
+
+.toggle h3:not(.active):hover {
+    cursor: pointer;
 }
 
 .row {
@@ -504,4 +508,18 @@ body {
 
 #account_info_card_name {
     text-transform: capitalize;
+}
+
+.teacher {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgba(var(--default), 0.2);
+    
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+.gap15 {
+    gap: 15px;
 }

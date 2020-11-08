@@ -7,6 +7,20 @@ firebase.auth().onAuthStateChanged(function(user) {
             doc.loggedIn = true;
             console.log(`${user.displayName} is logged in.`);
 
+            if(doc.user_info.account_type == 'student'){
+                if(doc.user_info.teacher.id !== 'null') localStorage.setItem('firstAuth', 'false')
+            else localStorage.setItem('firstAuth', 'true')  
+            }
+            
+
+            if(localStorage.getItem('firstAuth') == 'true') {
+                $("#welcome_overlay").css('display', 'flex');
+                $("#account_logged_in").css('display', 'none')
+            }else {
+                $("#welcome_overlay").css('display', 'none');
+                $("#account_logged_in").css('display', 'flex');
+            }
+
             $("#user_info").html(`<h4 id='user_name'>${doc.user.displayName}</h4>`);
             $("#account_info_card_name").html(`${doc.user.displayName} • <strong>${doc.user_info.account_type}</strong>`)
             $("#username_display").html(`Good ${(new Date().getHours() > 19) ? 'Evening' : (new Date().getHours() > 12) ? 'Afternoon' : 'Morning'}, ${user.displayName}`)

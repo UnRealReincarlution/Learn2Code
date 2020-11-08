@@ -15,6 +15,8 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 });
 
+let login_type = 'student';
+
 $("#add_course").on('click', (e) => {
     $("#overlay").css('display', 'flex');
     console.log("overlay shown")
@@ -38,4 +40,23 @@ function showLogin() {
     $("#login_form").css('display', 'flex');
 
     $("#student_toggle").css('display', 'none');
+}
+
+$("#student_toggle").find('h3').on('click', function (e){
+    $("#student_toggle").find(".active").removeClass("active");
+    $(this).addClass('active');
+
+    login_type = $(this).text().toLowerCase();
+    toggleView();
+
+    console.log($(this));
+});
+
+(function() {
+    toggleView();
+    
+})();
+
+function toggleView() {
+    $("#teacher_code").css('display', (login_type == 'student') ? 'none' : 'flex')
 }
