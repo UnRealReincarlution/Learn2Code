@@ -4,7 +4,7 @@ firebase.auth().onAuthStateChanged(function(user) {
         doc.loggedIn = true;
         console.log(`${user.displayName} is logged in.`);
 
-        window.location = './index.html'
+        window.location = './'
 
         $("#user_info").html(`<h4 id='user_name'>${user.displayName}</h4>`);
         $("#username_display").html(`Good ${(new Date().getHours() > 19) ? 'Evening' : (new Date().getHours() > 12) ? 'Afternoon' : 'Morning'}, ${user.displayName}`)

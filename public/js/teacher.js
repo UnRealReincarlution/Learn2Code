@@ -137,3 +137,16 @@ $(document).on('click', '.selectable_course', function(event) {
 
     document.location = `./edit?c=${cid}`;
 }); 
+
+$("#user_info").on('click', function() {
+    $("#settings_overlay").css("display", "flex");
+    $("#settings_name").text(doc.user_info.name);
+});
+
+$("#close_settings_overlay").on('click', function() {
+    $("#settings_overlay").css("display", "none")
+});
+
+$("#log_out").on('click', function() {
+    doc.signOut();
+});

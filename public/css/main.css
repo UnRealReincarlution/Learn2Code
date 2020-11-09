@@ -26,7 +26,8 @@ body {
     --alt3-background: #edf2f8; /* Blue Light Light */
     --alt3-background-light: #f8fafb;
 
-    --default-text: #031120;
+    --default-text: #434a5d;
+    --seccondary-text: #848793;
     --alt-background: #031120;
 
     --default-rgb: 3, 17, 32;
@@ -67,6 +68,7 @@ body {
     --alt3-background-light: #041427;
 
     --default-text: #f9f9f9;
+    --seccondary-text: #b3b7c5;
     --alt-background: #f9f9f9;
 
     --default-rgb: 249, 249, 249;
@@ -218,4 +220,8 @@ input {
     width: 100%;
     
     box-sizing: border-box;
+}
+
+h5, h6, p {
+    color: var(--seccondary-text);
 }

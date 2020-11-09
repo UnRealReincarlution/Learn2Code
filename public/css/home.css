@@ -123,7 +123,7 @@ body {
     width: fit-content;
 
     border: 1px solid transparent;
-    background-color: rgba(var(--default), 0.1);
+    background-color: rgba(var(--default), 0.2);
 
     transition: .2s ease transform, background;
 
@@ -140,8 +140,8 @@ body {
     max-width: 100%;
     min-height: fit-content;
 
-    /* border: 1px solid transparent; 
-    background-color: transparent; */
+    border: 1px solid transparent; 
+    background-color: rgba(var(--default), 0.1);
 
     height: 100%;
     width: 100%;
@@ -171,22 +171,22 @@ body {
 
 .course.javascript {
     border: 1px solid transparent;
-    background-color: rgba(var(--javascript), 0.1);
+    background-color: rgba(var(--javascript), 0.2);
 }
 
 .course.cpp {
     border: 1px solid transparent;
-    background-color: rgba(var(--cpp), 0.1);
+    background-color: rgba(var(--cpp), 0.2);
 }
 
 .course.python {
     border: 1px solid transparent;
-    background-color: rgba(var(--python), 0.1);
+    background-color: rgba(var(--python), 0.2);
 }
 
 .course.html {
     border: 1px solid transparent;
-    background-color: rgba(var(--html), 0.1);
+    background-color: rgba(var(--html), 0.2);
 }
 
 .course:hover:not(.large) {
@@ -213,22 +213,22 @@ body {
 
 .course.javascript:hover:not(.large) {
     border-color: rgba(var(--javascript), 0.4);
-    background-color: rgba(var(--javascript), 0.2);
+    background-color: rgba(var(--javascript), 0.3);
 }
 
 .course.cpp:hover:not(.large) {
     border-color: rgba(var(--cpp), 0.4);
-    background-color: rgba(var(--cpp), 0.2);
+    background-color: rgba(var(--cpp), 0.3);
 }
 
 .course.python:hover:not(.large) {
     border-color: rgba(var(--python), 0.4);
-    background-color: rgba(var(--python), 0.2);
+    background-color: rgba(var(--python), 0.3);
 }
 
 .course.html:hover:not(.large) {
     border-color: rgba(var(--html), 0.4);
-    background-color: rgba(var(--html), 0.2);
+    background-color: rgba(var(--html), 0.3);
 }
 
 .course  h3{
@@ -590,4 +590,59 @@ input.teacher {
 
 .course_creator div h3:last-of-type {
     margin: 0;
+}
+
+.courses_split_segmentation {
+    height: 100%;
+
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.course_edit {
+    height: 100%;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-sizing: border-box;
+}
+
+#content_display {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 35px;
+    box-sizing: border-box;
+}
+
+.boxer {
+    border-radius: 5px;
+
+    width: 100% !important;
+
+    background-color: rgba(var(--default), 0.1);
+    box-sizing: border-box;
+}
+
+#settings_overlay {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.overlay > span {
+    min-width: 300px;
 }
