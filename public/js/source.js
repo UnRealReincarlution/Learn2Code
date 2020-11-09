@@ -5,8 +5,11 @@ class Document {
         this.user = user;
         this.loggedIn = false;
         this.user_info = {};
+        this.ownedCourses = [];
 
         this.setTheme(this.theme);
+
+        console.log('Document Manager Loaded');
     }
 
     setTheme(input) {
@@ -91,6 +94,24 @@ class Document {
     signOut() {
         firebase.auth().signOut()
     }
+
+    async createCourse(title, nick, language, dificulty) {
+        // Add Verification to it to ensure fiddling dosent fuck the system :)
+        db.collection(`courses`).add({
+            course: title,
+            course_short: nick,
+            public: false,
+            lesson_count: 0,
+            course_dificulty: dificulty,
+            language: language,
+            author: doc.user.uid
+        }).then(() => {
+            return true;
+        }).catch((err) => {
+            console.log(err);
+            return false;
+        })
+    }   
 }
 
 let doc;
@@ -118,3 +139,7 @@ const auth = firebase.auth();
 const db = firebase.firestore();
 
 let profile_updating = false;
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}

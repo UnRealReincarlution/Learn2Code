@@ -32,10 +32,10 @@ body {
 
     z-index: 100;
 
-    background-color: rgba(0,0,0,0.8);
+    background-color: var(--main-background);
 }
 
-.overlay  > div {
+.overlay > div {
     background-color: var(--alt2-background);
     padding: 25px;
     border-radius: 5px;
@@ -50,6 +50,10 @@ body {
     gap: 5px;
 
     overflow: auto;
+
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    height: calc(100vh / 1.8);
 }
 
 .overlay > div > h1 {
@@ -61,24 +65,25 @@ body {
     margin: 5px;
 }
 
-.overlay > div > div {
+.overlay > div div {
     background-color: var(--alt2-background);
     padding: 10px;
 
     min-width: fit-content;
     min-height: fit-content;
 
-    max-height: 350px;
-
     overflow: auto;
 }
 
-.overlay  > div > div > h3 {
+.overlay > div div > h3 {
     padding: 15px;
     border-radius: 5px;
+
+    background-color: rgba(var(--default), 0.1);
+    color: var(--default-text);
 }
 
-.overlay > div > div > h3:hover {
+.overlay > div div > h3:hover {
     cursor: pointer;
 }
 
@@ -127,6 +132,10 @@ body {
     justify-content: space-between;
 }
 
+.course p {
+    font-weight: 100;
+}
+
 .course.large {
     max-width: 100%;
     min-height: fit-content;
@@ -143,7 +152,7 @@ body {
 .course.large h1 {
     font-size: 2em;
 
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .course.large h1 strong {
@@ -304,6 +313,17 @@ body {
 }
 
 #account {
+    background-color: var(--alt3-background);
+    margin: 0;
+
+    min-height: 250px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#account_2 {
     background-color: var(--alt3-background);
     margin: 0;
 
@@ -520,6 +540,54 @@ body {
     box-sizing: border-box;
 }
 
+input.teacher {
+    font-weight: 200;
+    font-size: 1em;
+
+    color: var(--default-text);
+}
+
+.teacher div {
+    padding: 7px;
+    font-size: 1em;
+}
+
+.teacher div:hover {
+    background-color: rgba(var(--default), 0.3);
+    border-radius: 3px;
+
+    cursor: pointer;
+}
+
 .gap15 {
     gap: 15px;
+}
+
+.course_creator {
+    min-height: 345px;
+    max-height: fit-content;
+}
+
+.course_creator .active.cpp {
+    background-color: rgba(var(--cpp), 0.5);
+}
+
+.course_creator .active.python {
+    background-color: rgba(var(--python), 0.5);
+}
+
+.course_creator .active.javascript {
+    background-color: rgba(var(--javascript), 0.5);
+}
+
+.course_creator .active.html {
+    background-color: rgba(var(--html), 0.5);
+}
+
+.course_creator div h3:first-of-type {
+    margin: 0;
+}
+
+.course_creator div h3:last-of-type {
+    margin: 0;
 }

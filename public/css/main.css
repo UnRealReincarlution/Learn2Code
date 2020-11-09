@@ -204,5 +204,18 @@ footer img {
 input {
     border-radius: 3px;
     border: none;
+
     padding: 10px;
+
+    font-weight: 600;
+    font-size: 1.17em;
+
+    color: var(--default-text);
+    background-color: rgba(var(--default), 0.1);
+
+    padding: 15px;
+    border-radius: 5px;
+    width: 100%;
+    
+    box-sizing: border-box;
 }
