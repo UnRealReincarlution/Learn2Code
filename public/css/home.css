@@ -193,7 +193,7 @@ body {
     transform: translateY(-5px);
     cursor: pointer;   
 
-    border-color: rgba(var(--default), 0.4);
+    border-color: rgba(var(--default), 1);
     background-color: rgba(var(--default), 0.2);
 }
 
@@ -212,22 +212,22 @@ body {
 }
 
 .course.javascript:hover:not(.large) {
-    border-color: rgba(var(--javascript), 0.4);
+    border-color: rgba(var(--javascript), 1);
     background-color: rgba(var(--javascript), 0.3);
 }
 
 .course.cpp:hover:not(.large) {
-    border-color: rgba(var(--cpp), 0.4);
+    border-color: rgba(var(--cpp), 1);
     background-color: rgba(var(--cpp), 0.3);
 }
 
 .course.python:hover:not(.large) {
-    border-color: rgba(var(--python), 0.4);
+    border-color: rgba(var(--python), 1);
     background-color: rgba(var(--python), 0.3);
 }
 
 .course.html:hover:not(.large) {
-    border-color: rgba(var(--html), 0.4);
+    border-color: rgba(var(--html), 1);
     background-color: rgba(var(--html), 0.3);
 }
 
@@ -550,11 +550,15 @@ input.teacher {
 .teacher div {
     padding: 7px;
     font-size: 1em;
+
+    border: 1px solid transparent;
 }
 
 .teacher div:hover {
-    background-color: rgba(var(--default), 0.3);
+    background-color: rgba(var(--default), 0.2);
     border-radius: 3px;
+
+    border: 1px solid rgb(var(--default));
 
     cursor: pointer;
 }
@@ -625,7 +629,7 @@ input.teacher {
     justify-content: space-between;
     gap: 15px;
 
-    padding: 35px;
+    padding: 25px;
     box-sizing: border-box;
 }
 
@@ -645,4 +649,91 @@ input.teacher {
 
 .overlay > span {
     min-width: 300px;
+}
+
+#lesson_list  {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+    box-sizing: border-box;
+    overflow: auto;
+
+    max-height: 45vh;
+}
+
+#lesson_list > div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    border-radius: 3px;
+    padding: 15px;
+    box-sizing: border-box;
+
+    border: 1px solid transparent;
+}
+
+#lesson_list > div:hover {
+    background-color: rgba(var(--default), 0.2);
+    cursor: pointer;
+    border: 1px solid rgb(var(--default), 0.5);
+}
+
+#lesson_list > div * {
+    margin: 5px;
+}
+
+#lesson_list > div > h5 {
+    justify-self: flex-end;
+}
+
+#lesson_list > div.active {
+    background-color: rgba(var(--default), 0.3);
+    cursor: pointer;
+    border: 1px solid rgb(var(--default));
+}
+
+/* #lesson_list > div.activity {
+} */
+
+.course_edit  {
+    padding: 15px;
+    background-color: transparent;
+}
+
+.course_edit .course_name {
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+.course_edit .course_name * {
+    margin: 5px;
+}
+
+.course_edit > div {
+    height: 100%;
+}
+
+.course_edit .course_name .course_name:hover {
+    background-color: rgba(var(--default), 0.3);
+    border: 1px solid rgba(var(--default), 0.8);
+
+    cursor: pointer;
+}
+
+.course_edit .course_name .course_name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#home:hover {
+    cursor: pointer;
+} 
+
+.padding15 {
+    padding: 15px;
 }

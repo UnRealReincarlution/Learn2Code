@@ -209,10 +209,10 @@ input {
 
     padding: 10px;
 
-    font-weight: 600;
-    font-size: 1.17em;
+    font-weight: 200;
+    font-size: 1em;
 
-    color: var(--default-text);
+    color: var(--seccondary-text);
     background-color: rgba(var(--default), 0.1);
 
     padding: 15px;
