@@ -31,10 +31,10 @@ firebase.auth().onAuthStateChanged(function(user) {
             $("#loading_overlay").css('display', 'none');
         });
     }else {
-        window.location = "./auth.html";
+        window.location = "./auth";
         console.log(`No Users are logged in.`);
 
-        $("#user_info").html("<a href='./auth.html' class='button'>Sign In</a>");
+        $("#user_info").html("<a href='./auth' class='button'>Sign In</a>");
     }
 });
 

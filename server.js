@@ -8,25 +8,17 @@ const path = require('path')
 const morgan = require('morgan')
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(morgan('combined'))
-
-//Create HTTP server and listen on port 3000 for requests
-app.get('/code', async function (req, res) {
-  console.log(req.server);
-  res.sendFile(path.join(__dirname + '/public/code.html'));
-});
-
-app.get('/teacher', async function (req, res) {
-  console.log(req);
-  res.sendFile(path.join(__dirname + '/public/teacher.html'));
-});
+app.use(morgan(':remote-addr - :method :url :status - :response-time ms'))
 
 app.get('/', async function (req, res) {
-  res.sendFile(path.join(__dirname + '/public/index.html'));
+  res.sendFile(path.join(__dirname + '/public/html/index.html'));
+});
+
+app.get('/:adress', async function (req, res) {
+  res.sendFile(path.join(__dirname + `/public/html/${req.params.adress}.html`));
 });
 
 //listen for request on port 3000, and as a callback function have the port listened on logged
 server.listen(port, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
-

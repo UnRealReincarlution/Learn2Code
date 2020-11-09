@@ -11,7 +11,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     }else {
         console.log(`No Users are logged in.`);
 
-        $("#user_info").html("<a href='./auth.html' class='button'>Sign In</a>");
+        $("#user_info").html("<a href='./auth' class='button'>Sign In</a>");
     }
 });
 

@@ -1,6 +1,6 @@
 body {
     overflow: hidden;
-    background-color: var(--alt3-background);
+    background-color: var(--alt3-background) !important;
 }
 
 #display {

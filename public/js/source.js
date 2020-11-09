@@ -52,7 +52,7 @@ class Document {
                     }).then(() => {
                         profile_updating = false;
                         // Redirect to homepage after sign up is completed
-                        window.location = "./index.html";
+                        window.location = "./";
                     });
                 }else {
                     db.collection("users").doc(cred.user.uid).set({
@@ -70,7 +70,7 @@ class Document {
                     }).then(() => {
                         profile_updating = false;
                         // Redirect to homepage after sign up is completed
-                        window.location = "./index.html";
+                        window.location = "./";
                     });
                 }
                 

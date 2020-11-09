@@ -28,18 +28,20 @@ firebase.auth().onAuthStateChanged(function(user) {
 
             db.collection("courses").where("author", "==", doc.user.uid).get().then((querySnapshot) =>{
                 querySnapshot.forEach((doc_) => {
-                    console.log(doc_.data());
-                    doc.ownedCourses.push(doc_.data());
+                    doc.ownedCourses.push({
+                        data: doc_.data(),
+                        id: doc_.id
+                    });
                 });
         
                 renderCourses();
             });
         });
     }else {
-        window.location = "./auth.html";
+        window.location = "./auth";
         console.log(`No Users are logged in.`);
 
-        $("#user_info").html("<a href='./auth.html' class='button'>Sign In</a>");
+        $("#user_info").html("<a href='./auth' class='button'>Sign In</a>");
     }
 });
 
@@ -118,19 +120,20 @@ function showLogin() {
     $("#student_toggle").css('display', 'none');
 }
 
-(() => {
-    
-})();
-
 function renderCourses() {
     doc.ownedCourses.forEach((element) => {
-        $(".courses").eq(0).prepend(`<div class="course ${element.language.toLowerCase()}">
-            <h3>${element.course}</h3>
+        $(".courses").eq(0).prepend(`<div class="course selectable_course ${element.data.language.toLowerCase()}" course-id="${element.id}">
+            <h3>${element.data.course}</h3>
             <div class="package">
-                <div class="lang">${element.language}</div>
+                <div class="lang">${element.data.language}</div>
                 <a class="resume">Edit -&gt;</a>
             </div>
         </div>`);
     });
-    
 }
+
+$(document).on('click', '.selectable_course', function(event) {
+    let cid = $(this).attr('course-id');
+
+    document.location = `./edit?c=${cid}`;
+}); 
